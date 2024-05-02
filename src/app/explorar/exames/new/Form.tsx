@@ -19,7 +19,7 @@ export function Form(props: { usuario: Usuario }) {
     const [state, formAction] = useFormState(create, initialState)
 
     return (
-        <div className="flex justify-center items-center h-screen ">
+        <div className="flex justify-center items-center h-screen max-w-lg mx-auto ">
             <form action={formAction} className="max-w-lg mx-auto p-8 bg-slate-900 rounded shadow-lg">
                 <h2 className="text-2xl font-bold mb-4">Novo Registro</h2>
                 <input type="hidden" name="usuario" value={usuario.id} />

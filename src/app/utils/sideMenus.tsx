@@ -1,6 +1,6 @@
 export const sideMenus = [
   { title: 'Resumo', src: 'resumo' },
-  { title: 'Perfil', src: 'perfil' },
+  { title: 'Perfil', src: 'perfil/1' },
 
   {
     title: 'Explorar',

@@ -37,5 +37,21 @@ export function ExamesItem({ exame } : ExamesItemProps){
                 onDelete={handleDelete}
             />
         </div>
+
+        
     )
 }
+
+{/* <TableRow key={exame.id}>
+<TableCell>{exame.nome}</TableCell>
+<TableCell>{exame.data}</TableCell>
+<TableCell>{exame.horario}</TableCell>
+<TableCell>{exame.localizacao}</TableCell>
+<TableCell>
+    <DropDownActions 
+        onExplorar={() => router.push(`/explorar/exames/${exame.id}`)}
+        onDelete={handleDelete}
+    />
+</TableCell>
+         
+</TableRow> */}

@@ -9,10 +9,12 @@ export default async function EditarExame({params}:Params) {
     const exames: Exame = await getById(id)
 
     return(
-        <main className="flex min-h-screen flex-col items-center ">
+        <>
             <SideBar active="explorar"/>
-
-            <EditForm {...exames}/>
-        </main>
+            <main className="ml-64 flex-1 p-8 min-h-screen flex flex-col justify-between">
+                <EditForm {...exames}/>
+                
+            </main>
+        </>
     )
 }

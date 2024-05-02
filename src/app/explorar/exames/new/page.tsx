@@ -10,11 +10,12 @@ export default async function CadastrarExame() {
     const usuario = await getPerfil(1)
 
     return(
-        <main className="flex min-h-screen flex-col items-center">
+        <>
             <SideBar active="explorar"/>
-
-            <Form usuario ={usuario} />
-        </main>
+            <main className="ml-64 flex-1 p-8 min-h-screen flex flex-col justify-between">
+                <Form usuario ={usuario} />
+            </main>
+        </>
     )
     
 }

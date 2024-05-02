@@ -2,7 +2,7 @@
 
 import { getExames } from "@/app/actions/exames/get"
 import { MesesSelect } from "@/components/MesesSelect"
-import { Button, Pagination } from "@nextui-org/react"
+import { Button, Pagination, Table, TableBody, TableHeader } from "@nextui-org/react"
 import { Filter, PlusIcon } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -17,7 +17,7 @@ export function ExamesData({ exames }: ExamesDataProps) {
     const [filteredExames, setFilteredExames] = useState(exames)
     const [filter, setFilter] = useState({ mes: 0 })
     const [page, setPage] = useState(1)
-    const [totalPages, setTotalPages] = useState(5)
+    const [totalPages, setTotalPages] = useState(1)
 
     useEffect(() => {
         const fecthData = async () => {
@@ -46,7 +46,7 @@ export function ExamesData({ exames }: ExamesDataProps) {
 
     return (
         <>
-            <section className="flex flex-col gap-4 bg-slate-800 w-full max-w-[1024px] mx-auto mt-4 p-6 rounded">
+            <section className="flex flex-col gap-4 bg-slate-900 w-full max-w-[1024px] mx-auto mt-4 p-6 rounded">
                 <div className="flex justify-between">
                     <h2 className="text-2xl font-bold">Exames e Consultas</h2>
                     <Link href="/explorar/exames/new">
@@ -61,10 +61,26 @@ export function ExamesData({ exames }: ExamesDataProps) {
                     <Button onClick={cleanFilter} >limpar</Button>
                 </div>
                 <div>
-                {filteredExames.map(exame =>
+                
+                    {filteredExames.map(exame =>
                         <ExamesItem key={exame.id} exame={exame} />
                     )}
+                
                 </div>
+                {/* <Table aria-label="Exames e Consultas" className="w-full max-w-[1024px] mx-auto mt-4 rounded">
+                    <TableHeader>
+                        <TableColumn>NOME</TableColumn>
+                        <TableColumn>DATA</TableColumn>
+                        <TableColumn>HORÁRIO</TableColumn>
+                        <TableColumn>LOCALIZAÇÃO</TableColumn>
+                        <TableColumn> </TableColumn>
+                    </TableHeader>
+                        <TableBody>
+                            {filteredExames.map(exame =>
+                                <ExamesItem key={exame.id} exame={exame} />
+                            )}
+                        </TableBody>                   
+                </Table> */}
             </section>
             <Pagination
                 onChange={handlePageChange}
